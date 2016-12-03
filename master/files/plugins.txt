@@ -1,0 +1,4 @@
+docker-plugin:0.16.2
+saferestart::0.3
+git:3.0.1
+github:1.22.3
