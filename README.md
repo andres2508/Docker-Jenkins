@@ -135,7 +135,7 @@ Como se observó en la anterior configuración se especifica que el trabajo se r
 Una vez terminada la configuración se da en save para guardarla y se redirecciona a la página principal del job, se hace click en Build Now lo que iniciará el proceso de construcción de la prueba.
 Finalmente los resultados de esta prueba es vista en la salida de la consola de la siguiente forma, donde se puede ver que se hizo el pull del repositorio y se probó el proyecto:
 
-![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/console.png)
+![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/console1.png)
 
 ![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/console2.png)
 
