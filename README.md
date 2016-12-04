@@ -88,19 +88,19 @@ Una vez se le da click se despliega un menú como el siguiente, es importante te
 
 Se deben llenar estos campos como se muestra en la anterior imagen,  adicional a esto adicionar la imagen que se desea usar:
 
-![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/addcloud3.png)
+![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/addtemplate.png)
 
 
 Al determinar que se desea adicionar la imagen Docker template se despliega un menú adicional que debe ser llenado de la siguiente forma. En esta parte es importante tener en cuenta que se configura un label en el template de docker, esto con el objetivo de definir sobre qué contenedor se van a ejecutar los jobs:
 
-![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/addcloud4.png)
+![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/addcloud3.png)
 
 
 Se deben determinar los parámetros necesarios o credenciales para esta conexión, esto se realiza al presionar Add credencial, los parámetros necesarios son los siguientes:  
 ```
 $ usuario = jenkins, contraseña= jenkins.
 ```
-![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/addcloud5.png)
+![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/addcloud4.png)
 
 
 Como esto se termina la configuración necesaria del Docker Cloud con la que el Jenkins Master se conectará con el fin de observar las imágenes que se van a levantar para los esclavos identificadas con un label que permite decirle que esa es la imagen que desean ejecutar. 
@@ -113,11 +113,20 @@ En la anterior imagen se puede observar la conexión realizada con el Docker Clo
 ## 7. Configuración de un Job
 Ahora bien una vez configurado lo anterior se procede a la configuración de un Jobs, para esto estando en la página principal de Jenkins creamos un nuevo Job, para nuestro caso se llamará Test-Project:
 
+![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/job.png)
+
+
 Posterior a esto se procede a realizar la configuración como se muestra en las siguientes imágenes:
+
+![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/job1.png)
 
 Pasamos a la pestaña de Source Code y configuramos como se observa a continuación. Es importante que es la zona de “restrict where this project can be run” se coloque el label que se le dio cuando se crea el docker cloud:
 
+![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/job2.png)
+
 Luego nos dirigimos a la pestaña de Build Environment y configuramos como se observa en la imagen, esto nos permitirá ejecutar la prueba: 
+
+![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/job3.png)
 
 Como se observó en la anterior configuración se especifica que el trabajo se realice dentro de un contenedor usando Docker, se especifica que se debe correr usando solo un nodo específico, se establece que la fuente del código estará en un repositorio de GitHub, finalmente se establece que se ejecute un comando de Shell en el momento de la construcción del trabajo, ejecutando así la aplicación disponible en el repositorio.
 
@@ -126,10 +135,9 @@ Como se observó en la anterior configuración se especifica que el trabajo se r
 Una vez terminada la configuración se da en save para guardarla y se redirecciona a la página principal del job, se hace click en Build Now lo que iniciará el proceso de construcción de la prueba.
 Finalmente los resultados de esta prueba es vista en la salida de la consola de la siguiente forma, donde se puede ver que se hizo el pull del repositorio y se probó el proyecto:
 
+![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/console.png)
 
-
-
-
+![alt tag] (https://github.com/andres2508/Docker-Jenkins/blob/master/images/console2.png)
 
 ## Referencias:
 <ul>
